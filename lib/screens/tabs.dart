@@ -3,6 +3,7 @@ import 'package:meal_app/screens/categories.dart';
 import 'package:meal_app/screens/meals.dart';
 import 'package:meal_app/screens/categories.dart';
 import 'package:meal_app/models/meal.dart';
+import 'package:meal_app/widgets/main_drawer.dart';
 
 class TabsScreen extends StatefulWidget {
   const TabsScreen({super.key});
@@ -62,6 +63,7 @@ class _TabsScreenState extends State<TabsScreen> {
 
     return Scaffold(
       appBar: AppBar(title: Text(activePageTitle)),
+      drawer: const MainDrawer(),
       body: activePage,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,
