@@ -14,7 +14,7 @@ class MealsScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            "Nothing Here!",
+            "Oh no!",
             style: Theme.of(context)
                 .textTheme
                 .headlineLarge!
@@ -22,7 +22,7 @@ class MealsScreen extends StatelessWidget {
           ),
           SizedBox(height: 16),
           Text(
-            "Tey Selecting a different category",
+            "Looks like this category is empty! Try Selecting a different category",
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
