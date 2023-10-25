@@ -6,8 +6,9 @@ import 'package:transparent_image/transparent_image.dart';
 class MealItem extends StatelessWidget {
   const MealItem({super.key, required this.meal, required this.onSelectMeal});
 
-  final Meal meal;
-  final void Function(Meal meal) onSelectMeal;
+  final Meal meal; // The meal object to display
+  final void Function(Meal meal)
+      onSelectMeal; // Callback function when the meal is selected
 
   String get complexityText {
     return meal.complexity.name[0].toUpperCase() +

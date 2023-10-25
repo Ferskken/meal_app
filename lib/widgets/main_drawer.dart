@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class MainDrawer extends StatelessWidget {
   const MainDrawer({super.key, required this.onSelectScreen});
 
-  final void Function(String identifier) onSelectScreen;
+  final void Function(String identifier)
+      onSelectScreen; // Callback function to switch screens
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class MainDrawer extends StatelessWidget {
                   ),
             ),
             onTap: () {
-              onSelectScreen("Meals");
+              onSelectScreen("Meals"); // Switch to the "Meals" screen
             },
           ),
           ListTile(
@@ -67,7 +68,7 @@ class MainDrawer extends StatelessWidget {
                   ),
             ),
             onTap: () {
-              onSelectScreen("Filters");
+              onSelectScreen("Filters"); // Switch to the "Filters" screen
             },
           ),
         ],
