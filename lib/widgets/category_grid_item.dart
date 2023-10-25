@@ -52,9 +52,16 @@ class CategoryGridItem extends StatelessWidget {
               child: Text(
                 category.title,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      color: Theme.of(context).colorScheme.onBackground,
-                      //backgroundColor: Colors.black45
+                  color: Theme.of(context).colorScheme.onBackground,
+                  //backgroundColor: Colors.black45
+                  shadows: [
+                    Shadow(
+                      color: Colors.black,
+                      offset: Offset(2, 2),
+                      blurRadius: 1,
                     ),
+                  ],
+                ),
               ),
             ),
           ),
