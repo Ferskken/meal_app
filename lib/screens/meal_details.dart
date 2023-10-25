@@ -12,13 +12,14 @@ class MealDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(meal.title),
+        title: Text(meal.title), // Display the meal title in the app bar
         actions: [
           IconButton(
-              onPressed: () {
-                onToggleFavorite(meal);
-              },
-              icon: Icon(Icons.star))
+            onPressed: () {
+              onToggleFavorite(meal); // Toggle meal as a favorite
+            },
+            icon: Icon(Icons.star), // Show a star icon for favoriting the meal
+          )
         ],
       ),
       body: SingleChildScrollView(
@@ -28,7 +29,7 @@ class MealDetailsScreen extends StatelessWidget {
               meal.imageUrl,
               width: double.infinity,
               fit: BoxFit.cover,
-            ),
+            ), // Display the meal's image
             const SizedBox(
               height: 14,
             ),
@@ -37,16 +38,16 @@ class MealDetailsScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 14),
+            ), // Display the "Ingredients" section title
+            const SizedBox(height: 14),
             for (final ingredients in meal.ingredients)
               Text(
                 ingredients,
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
-              ),
-            SizedBox(
+              ), // Display the list of meal ingredients
+            const SizedBox(
               height: 24,
             ),
             Text(
@@ -54,7 +55,7 @@ class MealDetailsScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                   color: Theme.of(context).colorScheme.primary,
                   fontWeight: FontWeight.bold),
-            ),
+            ), // Display the "Steps" section title
             for (final steps in meal.steps)
               Padding(
                 padding:
@@ -66,8 +67,8 @@ class MealDetailsScreen extends StatelessWidget {
                         color: Theme.of(context).colorScheme.onBackground,
                       ),
                 ),
-              ),
-            SizedBox(
+              ), // Display the list of meal preparation steps
+            const SizedBox(
               height: 24,
             ),
           ],

@@ -27,6 +27,7 @@ class MealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Initialize a placeholder content widget for when no meals are available
     Widget content = Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -37,37 +38,42 @@ class MealsScreen extends StatelessWidget {
                 .textTheme
                 .headlineLarge!
                 .copyWith(color: Theme.of(context).colorScheme.onBackground),
-          ),
+          ), // Display a headline
           SizedBox(height: 16),
           Text(
-            "Looks like this category is empty! Try Selecting a different category",
+            "Looks like this category is empty! Try selecting a different category",
             style: Theme.of(context)
                 .textTheme
                 .bodyLarge!
                 .copyWith(color: Theme.of(context).colorScheme.onBackground),
-          )
+          ), // Provide a message when there are no meals
         ],
       ),
     );
+
+    // Check if there are meals available, and display them if present
     if (meals.isNotEmpty) {
       content = ListView.builder(
         itemCount: meals.length,
         itemBuilder: (context, index) => MealItem(
             meal: meals[index],
             onSelectMeal: (meal) {
-              selectMeal(context, meal);
+              selectMeal(
+                  context, meal); // Function to select and view meal details
             }),
       );
     }
 
+    // Check if a title is provided, and display the content within a scaffold
     if (title == null) {
-      return content;
+      return content; // If no title, display the content directly
     }
 
     return Scaffold(
         appBar: AppBar(
           title: Text(title!),
         ),
-        body: content);
+        body:
+            content); // If a title is provided, display the content within a scaffold
   }
 }

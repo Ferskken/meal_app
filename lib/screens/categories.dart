@@ -6,21 +6,29 @@ import 'package:meal_app/widgets/category_grid_item.dart';
 import 'package:meal_app/models/category.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({super.key, required this.onToggleFavorite});
+  const CategoriesScreen(
+      {super.key,
+      required this.onToggleFavorite,
+      required this.availableMeals});
 
   final void Function(Meal meal) onToggleFavorite;
+  final List<Meal> availableMeals;
 
+  // Function to handle category selection and navigate to MealsScreen
   void _selectCategory(BuildContext context, Category category) {
-    final filteredMeals = dummyMeals
+    // Filter meals based on the selected category
+    final filteredMeals = availableMeals
         .where((meal) => meal.categories.contains(category.id))
         .toList();
 
+    // Navigate to MealsScreen with filtered meals for the selected category
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (ctx) => MealsScreen(
-          title: category.title,
-          meals: filteredMeals,
-          onToggleFavorite: onToggleFavorite,
+          title: category.title, // Title for MealsScreen
+          meals: filteredMeals, // List of filtered meals
+          onToggleFavorite:
+              onToggleFavorite, // Function to handle favorite toggling
         ),
       ),
     );
@@ -31,16 +39,18 @@ class CategoriesScreen extends StatelessWidget {
     return GridView(
       padding: const EdgeInsets.all(24),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 3 / 2,
-        crossAxisSpacing: 20,
-        mainAxisSpacing: 20,
+        crossAxisCount: 2, // Number of columns in the grid
+        childAspectRatio: 3 / 2, // Aspect ratio for each grid item
+        crossAxisSpacing: 20, // Spacing between columns
+        mainAxisSpacing: 20, // Spacing between rows
       ),
       children: [
+        // Create CategoryGridItem widgets for each available category
         for (final category in availableCategories)
           CategoryGridItem(
             category: category,
             onSelectCategory: () {
+              // Handle category selection
               _selectCategory(context, category);
             },
           )
