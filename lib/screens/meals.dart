@@ -41,7 +41,7 @@ class MealsScreen extends StatelessWidget {
           ), // Display a headline
           SizedBox(height: 16),
           Padding(
-            padding: const EdgeInsets.all(16), // Add padding around the text
+            padding: const EdgeInsets.all(16),
             child: Text(
               "Looks like this category is empty! Try selecting a different category",
               style: Theme.of(context)
