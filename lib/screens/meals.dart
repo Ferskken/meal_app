@@ -40,13 +40,17 @@ class MealsScreen extends StatelessWidget {
                 .copyWith(color: Theme.of(context).colorScheme.onBackground),
           ), // Display a headline
           SizedBox(height: 16),
-          Text(
-            "Looks like this category is empty! Try selecting a different category",
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(color: Theme.of(context).colorScheme.onBackground),
-          ), // Provide a message when there are no meals
+          Padding(
+            padding: const EdgeInsets.all(16), // Add padding around the text
+            child: Text(
+              "Looks like this category is empty! Try selecting a different category",
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: Theme.of(context).colorScheme.onBackground),
+              textAlign: TextAlign.center, // Center-align the text
+            ),
+          ),
         ],
       ),
     );
