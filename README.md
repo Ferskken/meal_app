@@ -14,5 +14,12 @@ Meal Details: Get detailed information about each meal, including preparation ti
 User-Friendly Interface: Enjoy a clean and intuitive user interface that makes tracking your meals a breeze.
 
 
-For my added feature I added network images to the category model, updated the dummy data and added an network image in the category_grid_item.dart
-I also added shadows to the text to make it easy to be read above the images.
+My added feature I added network images to the category model, updated the dummy data and added a network image in the category_grid_item.dart
+I also added shadows to the text to make it easier to read above the images.
+
+
+
+Peer Review:
+
+I had the opportunity to review my peer review partner Dragos's code, and its mostly similar to mine since we used the same course. It does differ in the filtering though. I enjoyed seeing the functionalities differ from our apps
+where he filtered his categories while I added pictures to my categories.
