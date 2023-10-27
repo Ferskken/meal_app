@@ -23,3 +23,6 @@ Peer Review:
 
 I had the opportunity to review my peer review partner Dragos's code, and its mostly similar to mine since we used the same course. It does differ in the filtering though. I enjoyed seeing the functionalities differ from our apps
 where he filtered his categories while I added pictures to my categories.
+
+
+ ![alt text](https://github.com/Ferskken/meal_app/blob/develop/assets/class_diagram.png?raw=true)
